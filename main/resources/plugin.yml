@@ -1,0 +1,27 @@
+name: Survival_PvPvE
+version: '${project.version}'
+main: dorayakiumai.survival_pvpve.Survival_PvPvE
+api-version: '1.20'
+depend: [MythicMobs]
+commands:
+  start:
+    description: 試合を始める
+    usage: /<command>
+  reset_attribute:
+    description: カスタムされたAttrubuteを消します
+    usage: /<command>
+  end:
+    description: 試合を終わらせる
+    usage: /<command>
+  lootblock:
+    description: このコマンドで取得できるブロックの上に宝箱を設置する
+    usage: /<command>
+  remove_lootblock:
+    description: このコマンドで登録したLootBlockを解除する
+    usage: /<command>
+  set_lootchest:
+    description: 登録したLootBlockの上にチェストを置く
+    usage: /<command>
+  custom_enchant:
+    description: 持っているアイテムに作ったエンチャントを付与する
+    usage: /<command>
