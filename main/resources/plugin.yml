@@ -5,13 +5,13 @@ api-version: '1.20'
 depend: [MythicMobs]
 commands:
   start:
-    description: 試合を始める
+    description: 試合を始める(必須)
     usage: /<command>
   reset_attribute:
     description: カスタムされたAttrubuteを消します
     usage: /<command>
   end:
-    description: 試合を終わらせる
+    description: 試合を終わらせる(必須)
     usage: /<command>
   lootblock:
     description: このコマンドで取得できるブロックの上に宝箱を設置する
@@ -20,8 +20,11 @@ commands:
     description: このコマンドで登録したLootBlockを解除する
     usage: /<command>
   set_lootchest:
-    description: 登録したLootBlockの上にチェストを置く
+    description: 登録したLootBlockの上にチェストを置く(必須)
     usage: /<command>
   custom_enchant:
     description: 持っているアイテムに作ったエンチャントを付与する
+    usage: /<command>
+  check_players:
+    description: 参加するプレイヤーをチェックします(必須)
     usage: /<command>

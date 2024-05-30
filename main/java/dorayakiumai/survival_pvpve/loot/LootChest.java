@@ -2,6 +2,7 @@ package dorayakiumai.survival_pvpve.loot;
 
 import dorayakiumai.survival_pvpve.Survival_PvPvE;
 import dorayakiumai.survival_pvpve.customitem.CustomItemsManager;
+import io.lumine.mythic.bukkit.MythicBukkit;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -75,6 +76,8 @@ public class LootChest extends JavaPlugin {
                             inv.setItem(i,CustomItemsManager.getCustomItem("upgrade_DAMAGE"));
                         }
                         else if (count == 3) {
+                            //元々スタックするアイテムで、MM側から一回取り出してコピーだとスタックしちゃうからこれだけは毎回取得
+                            //どうしてもうまくいかなかったので火打石に変えて実装、前は鎖だった
                             inv.setItem(i,CustomItemsManager.getCustomItem("upgrade_SHOTTIME_SPEED"));
                         }
                         else if (count <= 5) {
@@ -84,10 +87,13 @@ public class LootChest extends JavaPlugin {
                             inv.setItem(i,CustomItemsManager.getCustomItem("bow"));
                         }
                         else if (count <= 20) {
-                            inv.setItem(i,(new ItemStack(Material.IRON_INGOT, 3)));
+                            inv.setItem(i,(new ItemStack(Material.IRON_INGOT, 1)));
                         }
                         else if (count <= 40) {
-                            inv.setItem(i,(new ItemStack(Material.ARROW, 8)));
+                            inv.setItem(i,(new ItemStack(Material.ARROW, 2)));
+                        }
+                        else if (count <= 50) {
+                            inv.setItem(i,(new ItemStack(Material.COOKED_BEEF, 1)));
                         }
                     }
                 } else {
@@ -137,32 +143,36 @@ public class LootChest extends JavaPlugin {
                     for (int i = 0; i <= 26; i++) {
                         Random rand = new Random();
                         int count = rand.nextInt(100);
-                        if (count == 0) {
-                            inv.setItem(i,(new ItemStack(Material.DIAMOND, 3)));
-                        }
-                        else if (count == 1) {
-                            inv.setItem(i, CustomItemsManager.getCustomItem("upgrade_ARROW_SPEED"));
+                        if (count <= 1) {
+                            inv.setItem(i,(new ItemStack(Material.DIAMOND, 1)));
                         }
                         else if (count == 2) {
-                            inv.setItem(i,CustomItemsManager.getCustomItem("upgrade_DAMAGE"));
+                            inv.setItem(i, CustomItemsManager.getCustomItem("upgrade_ARROW_SPEED"));
                         }
                         else if (count == 3) {
+                            inv.setItem(i,CustomItemsManager.getCustomItem("upgrade_DAMAGE"));
+                        }
+                        else if (count == 4) {
+                            //元々スタックするアイテムで、MM側から一回取り出してコピーだとスタックしちゃうからこれだけは毎回取得
                             inv.setItem(i,CustomItemsManager.getCustomItem("upgrade_SHOTTIME_SPEED"));
                         }
-                        else if (count <= 5) {
+                        else if (count == 5) {
                             inv.setItem(i,(new ItemStack(Material.CROSSBOW)));
                         }
                         else if (count <= 10) {
                             inv.setItem(i,CustomItemsManager.getCustomItem("bow"));
                         }
-                        else if (count <= 20) {
-                            inv.setItem(i,(new ItemStack(Material.GOLD_INGOT, 3)));
+                        else if (count <= 15) {
+                            inv.setItem(i,(new ItemStack(Material.GOLD_INGOT, 1)));
                         }
-                        else if (count <= 40) {
-                            inv.setItem(i,(new ItemStack(Material.IRON_INGOT, 12)));
+                        else if (count <= 33) {
+                            inv.setItem(i,(new ItemStack(Material.IRON_INGOT, 1)));
+                        }
+                        else if (count <= 50) {
+                            inv.setItem(i,(new ItemStack(Material.COOKED_BEEF, 1)));
                         }
                         else if (count <= 60) {
-                            inv.setItem(i,(new ItemStack(Material.ARROW, 32)));
+                            inv.setItem(i,(new ItemStack(Material.ARROW, 4)));
                         }
                     }
                 } else {
@@ -211,29 +221,33 @@ public class LootChest extends JavaPlugin {
                     for (int i = 0; i <= 26; i++) {
                         Random rand = new Random();
                         int count = rand.nextInt(100);
-                        if (count == 0) {
-                            inv.setItem(i,(new ItemStack(Material.DIAMOND, 10)));
-                        }
-                        else if (count <= 2) {
-                            inv.setItem(i,(new ItemStack(Material.ENCHANTED_GOLDEN_APPLE, 1)));
+                        if (count <= 2) {
+                            inv.setItem(i,(new ItemStack(Material.DIAMOND, 1)));
                         }
                         else if (count == 3) {
+                            inv.setItem(i,(new ItemStack(Material.ENCHANTED_GOLDEN_APPLE, 1)));
+                        }
+                        else if (count <= 5) {
                             inv.setItem(i, CustomItemsManager.getCustomItem("upgrade_ARROW_SPEED"));
                         }
-                        else if (count == 4) {
+                        else if (count <= 7) {
                             inv.setItem(i,CustomItemsManager.getCustomItem("upgrade_DAMAGE"));
                         }
-                        else if (count == 5) {
+                        else if (count <= 9) {
+                            //元々スタックするアイテムで、MM側から一回取り出してコピーだとスタックしちゃうからこれだけは毎回取得
                             inv.setItem(i,CustomItemsManager.getCustomItem("upgrade_SHOTTIME_SPEED"));
                         }
                         else if (count <= 20) {
-                            inv.setItem(i,(new ItemStack(Material.GOLD_INGOT, 3)));
+                            inv.setItem(i,(new ItemStack(Material.GOLD_INGOT, 1)));
                         }
-                        else if (count <= 40) {
-                            inv.setItem(i,(new ItemStack(Material.IRON_INGOT, 12)));
+                        else if (count <= 57) {
+                            inv.setItem(i,(new ItemStack(Material.IRON_INGOT, 1)));
                         }
-                        else if (count <= 60) {
-                            inv.setItem(i,(new ItemStack(Material.ARROW, 32)));
+                        else if (count <= 80) {
+                            inv.setItem(i,(new ItemStack(Material.COOKED_BEEF, 4)));
+                        }
+                        else {
+                            inv.setItem(i,(new ItemStack(Material.ARROW, 8)));
                         }
                     }
                 } else {
